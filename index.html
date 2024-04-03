@@ -63,11 +63,11 @@
               <input type="text" class="form-control" id="InputEmail">
             </div>
             <label for="inputSelectServizio" class="form-label">Tipo di lavoro</label>
-            <select class="form-select" aria-label="Default select">
+            <select class="form-select" aria-label="Default select"id="selettoreLavoro" >
               <option selected>Seleziona il tipo di lavoro</option>
-              <option value="1">Backed Development</option>
-              <option value="2">Frontend Development</option>
-              <option value="3">Project Analysis</option>
+              <option value="Backed Development">Backed Development</option>
+              <option value="Frontend Development">Frontend Development</option>
+              <option value="Project Analysis">Project Analysis</option>
             </select>
             <div class="py-3">
               <label for="InputText" class="form-label">Textarea con Bootstrap 5</label>
@@ -85,10 +85,10 @@
               <label class="form-check-label" for="CheckPolicy">Accetto la Privacy Policy</label>
             </div>
             <div class="d-flex justify-content-around text-center flex-wrap">
-              <div><button type="submit" class="btn btn-primary m-3">Calcola preventivo</button></div>
+              <div><button id="calcola" type="submit" class="btn btn-primary m-3">Calcola preventivo</button></div>
               <div class="col-8">
                 <p class="mb-0 fw-bolder ">Prezzo finale
-                <p class="fs-5 fw-bolder">€200<span class="fw-lighter">,00</span></p>
+                <p id="totale" class="fs-5 fw-bold">€200<span class="fw-lighter">,00</span></p>
                 </p>
               </div>
             </div>
