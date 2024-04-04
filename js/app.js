@@ -44,14 +44,17 @@ const codiciValidi = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'];
 const codicePromozionale = promoElement.value
 
 // Se l’utente inserisce un codice promozionale valido, ha diritto ad uno sconto del 25% sul prezzo finale. Se il codice inserito non è valido, il sito deve informare l’utente che il codice non è valido e il prezzo finale viene calcolato senza applicare sconti.
+if (codicePromozionale) {
 // Il risultato del calcolo del prezzo finale deve essere visualizzato in “forma umana” (con 2 decimali e il simbolo dell’euro).
 if (codiciValidi.includes(codicePromozionale) ) { 
     const sconto = prezzoNumero * 0.25;
-    const prezzoScontato = (prezzoNumero - sconto).toFixed(2)
+    const prezzoScontato = (prezzoNumero - sconto)
     console.log ((prezzoScontato))
    totalElement.innerHTML = ('il tuo codice è valido abbiamo effettuato uno sconto del 25%  al totale di ' + risultato + ' il tuo prezzo sarà  '+ prezzoScontato + '€ per una prestazione di 10 ore selezionando il ' + servizio + '!')
+} else  {
+    totalElement.innerHTML =('Il codice promozionale inserito non è valido. Il prezzo finale è ' + risultato )
 }
-}) 
+ } })
 
 
 
