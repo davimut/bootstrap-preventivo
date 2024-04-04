@@ -23,41 +23,38 @@ const tariffaAnalisi = 33.60
 // Il prezzo finale è dato dal numero di ore per prezzo orario. Supponiamo per semplicità che ogni progetto richieda lo stesso numero di ore di lavoro (es: 10 ore).
 const oreLavoro = 10
  let risultato = 0
-if (servizio === 'Backed Development') {
+if (servizio === 'Backed Development' ) {
     risultato =(((oreLavoro * tariffaBackend) + '€') )
 console.log(risultato)
-totalElement.innerHTML = (' per una prestazione di 10 ore selezionando il ' + servizio + 'la tua tariffa è ' + risultato)
+totalElement.innerHTML = (' per una prestazione di 10 ore selezionando il ' + servizio + ' la tua tariffa è ' + risultato)
 } else if (servizio === 'Frontend Development') {
     risultato = (((oreLavoro * tariffaFrontend) + '€'))
     console.log(risultato)
-    totalElement.innerHTML =(' per una prestazione di 10 ore selezionando il ' + servizio + 'la tua tariffa è ' + risultato)
+    totalElement.innerHTML =(' per una prestazione di 10 ore selezionando il ' + servizio + ' la tua tariffa è ' + risultato)
 } else if (servizio === 'Project Analysis') {
     risultato = (((oreLavoro * tariffaAnalisi) + '€'))
     console.log(risultato)
-    totalElement.innerHTML =(' per una prestazione di 10 ore selezionando il ' + servizio + 'la tua tariffa è ' + risultato)
+    totalElement.innerHTML =(' per una prestazione di 10 ore selezionando il ' + servizio + ' la tua tariffa è ' + risultato)
 }
-
 
 
 // L’utente potrebbe decidere di utilizzare un codice promozionale tra i seguenti: YHDNU32, JANJC63, PWKCN25, SJDPO96, POCIE24. 
 const prezzoNumero = parseFloat(risultato)
 const codiciValidi = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'];
 const codicePromozionale = promoElement.value
-if (codiciValidi.includes(codicePromozionale)) { 
+
+// Se l’utente inserisce un codice promozionale valido, ha diritto ad uno sconto del 25% sul prezzo finale. Se il codice inserito non è valido, il sito deve informare l’utente che il codice non è valido e il prezzo finale viene calcolato senza applicare sconti.
+// Il risultato del calcolo del prezzo finale deve essere visualizzato in “forma umana” (con 2 decimali e il simbolo dell’euro).
+if (codiciValidi.includes(codicePromozionale) ) { 
     const sconto = prezzoNumero * 0.25;
     const prezzoScontato = (prezzoNumero - sconto).toFixed(2)
     console.log ((prezzoScontato))
    totalElement.innerHTML = ('il tuo codice è valido abbiamo effettuato uno sconto del 25%  al totale di ' + risultato + ' il tuo prezzo sarà  '+ prezzoScontato + '€ per una prestazione di 10 ore selezionando il ' + servizio + '!')
-} else {
-    totalElement.innerHTML = ( "Il codice promozionale inserito non è valido." )
-} 
-
+}
 }) 
 
 
 
 
 
-// Se l’utente inserisce un codice promozionale valido, ha diritto ad uno sconto del 25% sul prezzo finale. Se il codice inserito non è valido, il sito deve informare l’utente che il codice non è valido e il prezzo finale viene calcolato senza applicare sconti.
 
-// Il risultato del calcolo del prezzo finale deve essere visualizzato in “forma umana” (con 2 decimali e il simbolo dell’euro).
