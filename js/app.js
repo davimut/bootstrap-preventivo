@@ -1,11 +1,11 @@
 
 // Aggiungiamo la componente js di interazione con l’utente.
 const selectJobElement = document.getElementById('selettoreLavoro')
-const buttonElement    = document.getElementById('calcola')
+const formElement    = document.getElementById('form')
 const totalElement     = document.getElementById('totale')
 const promoElement     = document.getElementById('inputCodePromo')
 // Quando l’utente fa click sul bottone submit del form, il sito deve calcolare l’ammontare del preventivo per le ore di lavoro richieste. 
-buttonElement.addEventListener('click', function (event) {
+formElement.addEventListener('submit', function (event) {
     event.preventDefault();
 
     const servizio  = selectJobElement.value
@@ -41,7 +41,6 @@ buttonElement.addEventListener('click', function (event) {
     const prezzoNumero = parseFloat(risultato)
     const codiciValidi = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'];
     const codicePromozionale = promoElement.value
-
     // Se l’utente inserisce un codice promozionale valido, ha diritto ad uno sconto del 25% sul prezzo finale. Se il codice inserito non è valido, il sito deve informare l’utente che il codice non è valido e il prezzo finale viene calcolato senza applicare sconti.
     if (codicePromozionale) {
         // Il risultato del calcolo del prezzo finale deve essere visualizzato in “forma umana” (con 2 decimali e il simbolo dell’euro).

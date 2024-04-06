@@ -49,21 +49,21 @@
           <h6>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo.</h6>
 
           <!-- inizio form -->
-          <form class="py-3">
+          <form id="form" class="py-3">
             <div class="mb-3">
               <label for="Nome" class="form-label">Nome</label>
-              <input type="text" class="form-control " id="InputNome">
+              <input type="text" class="form-control " id="InputNome" required>
             </div>
             <div class="mb-3">
               <label for="Cognome" class="form-label">Cognome</label>
-              <input type="text" class="form-control" id="InputCognome">
+              <input type="text" class="form-control" id="InputCognome" required>
             </div>
             <div class="mb-3">
               <label for="Email" class="form-label">Email</label>
-              <input type="text" class="form-control" id="InputEmail">
+              <input type="text" class="form-control" id="InputEmail" required>
             </div>
             <label for="inputSelectServizio" class="form-label">Tipo di lavoro</label>
-            <select class="form-select" aria-label="Default select" id="selettoreLavoro">
+            <select class="form-select" aria-label="Default select" id="selettoreLavoro" required>
               <option selected>Seleziona il tipo di lavoro</option>
               <option value="Backed Development">Backed Development</option>
               <option value="Frontend Development">Frontend Development</option>
@@ -81,20 +81,20 @@
               <input type="text" class="form-control" id="inputCodePromo">
             </div>
             <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="Check">
+              <input type="checkbox" class="form-check-input" id="Check" required>
               <label class="form-check-label" for="CheckPolicy">Accetto la Privacy Policy</label>
             </div>
             <div class="d-flex justify-content-around text-center flex-wrap">
-              <div><button id="calcola" type="submit" class="btn btn-primary m-3">Calcola preventivo</button></div>
+              <div><button type="submit" class="btn btn-primary m-3">Calcola preventivo</button></div>
               <div class="col-8">
                 <p class="mb-0 fw-bolder ">Prezzo finale
                 <p id="totale" class="fs-5 fw-bold"></p>
                 </p>
               </div>
             </div>
-        </div>
-        </form> <!-- fine form -->
-
+        </form> 
+        
+        </div><!-- fine form -->
 
         <!-- inizio card -->
         <div class="card col-lg-3 h-25 p-0"> <!-- colonna 2 -->
